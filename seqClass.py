@@ -17,7 +17,7 @@ args = parser.parse_args()
 args.seq = args.seq.upper()           # Normalize to upper case
 
 # Check for bases that indicated RNA or DNA
-if re.search('^[ACGTU]+$', args.seq):
+if re.search('^[ACGT]+$', args.seq) or re.search('^[ACGU]+$', args.seq):
     if re.search('T', args.seq):
         print ('The sequence is DNA')
     elif re.search('U', args.seq):
